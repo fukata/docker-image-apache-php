@@ -23,9 +23,10 @@ RUN yum update -y \
     && rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm \
     && yum update -y \
     && yum install -y php-mcrypt* \
-    && rm remi-release-6*.rpm epel-release-6*.rpm
+    && rm remi-release-6*.rpm epel-release-6*.rpm \
+    && useradd -u 1000 -U -M www-data
 
 WORKDIR /etc/httpd
 
 EXPOSE 80 443
-CMD ["httpd"]
+CMD ["httpd", "-DFOREGROUND", "-d", "/etc/httpd"]
