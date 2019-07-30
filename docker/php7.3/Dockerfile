@@ -20,7 +20,7 @@ RUN yum update -y \
                       php-mysqli \
                       php-pdo \
                       php-sqlite \
-                      predis \
+                      php-pecl-redis \
                       php-wddx \
                       php-xml \
                       php-xsl \
