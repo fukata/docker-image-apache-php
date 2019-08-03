@@ -12,6 +12,7 @@ RUN yum update -y \
     && yum-config-manager --enable remi-php73 \
     && yum update -y \
     && yum install -y php \
+                      php-fpm \
                       php-dom \
                       php-gd \
                       php-mbstring \
